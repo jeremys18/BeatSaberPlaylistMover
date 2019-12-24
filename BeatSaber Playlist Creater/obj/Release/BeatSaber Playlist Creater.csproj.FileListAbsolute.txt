@@ -1,0 +1,16 @@
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\bin\Release\BeatSaber Playlist Creater.exe.config
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\bin\Release\BeatSaber Playlist Creater.exe
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\bin\Release\BeatSaber Playlist Creater.pdb
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\bin\Release\Newtonsoft.Json.dll
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Release\BeatSaber Playlist Creater.csprojAssemblyReference.cache
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Release\MainWindow.g.cs
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Release\App.g.cs
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Release\BeatSaber Playlist Creater_MarkupCompile.cache
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Release\BeatSaber Playlist Creater_MarkupCompile.lref
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Release\MainWindow.baml
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Release\BeatSaber Playlist Creater.g.resources
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Release\BeatSaber_Playlist_Creater.Properties.Resources.resources
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Release\BeatSaber Playlist Creater.csproj.GenerateResource.cache
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Release\BeatSaber Playlist Creater.csproj.CopyComplete
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Release\BeatSaber Playlist Creater.exe
+C:\Users\J-Dogg\source\repos\jeremys18\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Release\BeatSaber Playlist Creater.pdb
