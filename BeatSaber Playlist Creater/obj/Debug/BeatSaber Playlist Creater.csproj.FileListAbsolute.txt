@@ -14,3 +14,18 @@ C:\Users\J-Dogg\source\repos\BeatSaber Playlist Creater\BeatSaber Playlist Creat
 C:\Users\J-Dogg\source\repos\BeatSaber Playlist Creater\BeatSaber Playlist Creater\obj\Debug\BeatSaber Playlist Creater.pdb
 C:\Users\J-Dogg\source\repos\BeatSaber Playlist Creater\BeatSaber Playlist Creater\bin\Debug\Newtonsoft.Json.dll
 C:\Users\J-Dogg\source\repos\BeatSaber Playlist Creater\BeatSaber Playlist Creater\obj\Debug\BeatSaber Playlist Creater.csproj.CopyComplete
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\bin\Debug\BeatSaber Playlist Creater.exe.config
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\bin\Debug\BeatSaber Playlist Creater.exe
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\bin\Debug\BeatSaber Playlist Creater.pdb
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Debug\BeatSaber Playlist Creater.csprojAssemblyReference.cache
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Debug\MainWindow.g.cs
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Debug\App.g.cs
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Debug\BeatSaber Playlist Creater_MarkupCompile.cache
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Debug\BeatSaber Playlist Creater_MarkupCompile.lref
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Debug\MainWindow.baml
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Debug\BeatSaber Playlist Creater.g.resources
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Debug\BeatSaber_Playlist_Creater.Properties.Resources.resources
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Debug\BeatSaber Playlist Creater.csproj.GenerateResource.cache
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Debug\BeatSaber Playlist Creater.csproj.CopyComplete
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Debug\BeatSaber Playlist Creater.exe
+C:\Users\terri\Source\Repos\BeatSaberPlaylistMover\BeatSaber Playlist Creater\obj\Debug\BeatSaber Playlist Creater.pdb
