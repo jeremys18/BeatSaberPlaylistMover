@@ -198,6 +198,7 @@ namespace BeatSaber_Playlist_Mover
                             file.CopyTo($@"{songPath}\{file.Name}");
                         }
                         isSafeToDelete = true;
+                        UpdateStatus($"\nCopied {song.songName} to Playlist folder...");
                     }
                     catch (Exception e)
                     {
