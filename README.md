@@ -41,7 +41,6 @@ Here's how the program does this:
 3. Load the folders.xml file to track any current folder setup
 4. For each playlist:
  a. Create a folder with the same name as the playlist in the Playlists folder ( if it doesn't already exist) and save the base 64 image string as an image within the new folder. If folder already exists skip making cover art as it should already exist.
- 
  b. For each song in the playlist:
     1. Check if the song already exists in the playlist folder from 4a. If not, create it. If it does skip this song...
     2. Copy song folder files to new location
