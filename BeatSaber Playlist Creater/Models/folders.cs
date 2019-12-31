@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace BeatSaber_Playlist_Creater.Models
+namespace BeatSaber_Playlist_Mover.Models
 {
     [Serializable, XmlRoot(Namespace = "", IsNullable = false)]
     public class folders

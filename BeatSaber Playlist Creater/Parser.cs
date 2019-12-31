@@ -1,4 +1,4 @@
-﻿using BeatSaber_Playlist_Creater.Models;
+﻿using BeatSaber_Playlist_Mover.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace BeatSaber_Playlist_Creater
+namespace BeatSaber_Playlist_Mover
 {
     public class Parser
     {

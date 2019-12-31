@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A6F7359E-EAEA-45F9-9D60-36A20390D3C8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BeatSaber_Playlist_Creater</RootNamespace>
-    <AssemblyName>BeatSaber Playlist Creater</AssemblyName>
+    <RootNamespace>BeatSaber_Playlist_Mover</RootNamespace>
+    <AssemblyName>BeatSaber Playlist Mover</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

@@ -1,4 +1,4 @@
-﻿namespace BeatSaber_Playlist_Creater.Models
+﻿namespace BeatSaber_Playlist_Mover.Models
 {
     public class SongInformation
     {

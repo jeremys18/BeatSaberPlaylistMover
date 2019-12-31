@@ -1,4 +1,4 @@
-﻿using BeatSaber_Playlist_Creater.Models;
+﻿using BeatSaber_Playlist_Mover.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +7,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Forms;
 
-namespace BeatSaber_Playlist_Creater
+namespace BeatSaber_Playlist_Mover
 {
     public partial class MainWindow : Window
     {
