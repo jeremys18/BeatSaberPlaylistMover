@@ -46,8 +46,8 @@ namespace BeatSaber_Playlist_Creater
                 return;
             }
             UpdateStatus("\n\nStarting........\nGetting song hash info.....");
-            //_songHashDisctionary = await parser.GetSongFolderHashesAsync(_basePath);
-            UpdateStatus("\nGot hases. Looking for playlists.....");
+            _songHashDisctionary = await parser.GetSongFolderHashesAsync(_basePath);
+            UpdateStatus("\nGot hashes. Looking for playlists.....");
             _folders = parser.GetFoldersFromXml(_basePath);
             if (!_folders.folder.Any())
             {
@@ -62,6 +62,7 @@ namespace BeatSaber_Playlist_Creater
                     UpdateStatus("\n\nContinuing. This will overwrite your existing xml file with a valid one.");
                 }
             }
+            _folders.folder.RemoveAll(x => x.Path.StartsWith("Example")); // We don't want to include examples here
             var playlists = FindPlaylists();
             CreatePlaylistFolders(playlists);
             UpdateStatus("\n\nSaving folders xml file.....");
