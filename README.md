@@ -40,14 +40,14 @@ Here's how the program does this:
 2. Get the playlists 
 3. Load the folders.xml file to track any current folder setup
 4. For each playlist:
- a. Create a folder with the same name as the playlist in the Playlists folder ( if it doesn't already exist) and save the base 64 image string as an image within the new folder. If folder already exists skip making cover art as it should already exist.
- b. For each song in the playlist:
+ 1. Create a folder with the same name as the playlist in the Playlists folder ( if it doesn't already exist) and save the base 64 image string as an image within the new folder. If folder already exists skip making cover art as it should already exist.
+ 2. For each song in the playlist:
     1. Check if the song already exists in the playlist folder from 4a. If not, create it. If it does skip this song...
     2. Copy song folder files to new location
     3. If nothing went wrong, delete the old song folder. If something went wrong, mark custom levels folder for renamming
- c. Add playlist info to playlists object
-6. Save playlist info to the folders.xml file
-7. If renamming is true rename the custom levels folder so no duplicates exist.
+ 3. Add playlist info to playlists object
+5. Save playlist info to the folders.xml file
+6. If renamming is true rename the custom levels folder so no duplicates exist.
 
 
 # Hashes everywhere #
