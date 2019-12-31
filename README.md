@@ -96,4 +96,4 @@ You will NOT lose any songs as all remaining songs will still be in the renamed 
 
 # MORE NFO!! #
 
-If you want more info just create an issue and specify what you'd like to know. I'll update this with any info you need. :)
+If you want more info just create an issue and specify what you'd like to know. I'll update this with any info you need. :) 
