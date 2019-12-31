@@ -9,9 +9,6 @@ using System.Windows.Forms;
 
 namespace BeatSaber_Playlist_Creater
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public string Status { get; set; }
@@ -37,21 +34,75 @@ namespace BeatSaber_Playlist_Creater
         private async void Start()
         {
             var parser = new Parser();
+            UpdateStatus(string.Empty);
             if (string.IsNullOrWhiteSpace(_basePath))
             {
-                StatusText.Text = "You MUST set select your beat saber folder first!";
+                UpdateStatus("You MUST set select your beat saber folder first!\n");
                 return;
             }
-            UpdateStatus("Starting........\nGetting song hash info.....");
-            _songHashDisctionary = await parser.GetSongFolderHashesAsync(_basePath);
+            if (!CheckRequiredFoldersAndFiles())
+            {
+                UpdateStatus("\nCan not continue until all files and folders required are in place.....");
+                return;
+            }
+            UpdateStatus("\n\nStarting........\nGetting song hash info.....");
+            //_songHashDisctionary = await parser.GetSongFolderHashesAsync(_basePath);
             UpdateStatus("\nGot hases. Looking for playlists.....");
             _folders = parser.GetFoldersFromXml(_basePath);
+            if (!_folders.folder.Any())
+            {
+                MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Oh no! It looks like you either have an empty folders.xml file OR you have capitalized WIP values. If you have not manually changed the file continue. If you have changed the file, go back and make the WIP values all lower case. Do you want to continue anyways and overwrite the folders.xml file?", "Overwrite Confirmation", MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.No)
+                {
+                    UpdateStatus("\n\nCould not continue!\nIf you have True or False values in your folders.xml file you NEED to change them to be all lower case. Make any \"False\" values false and any \"True\" values true. Then hit start to try again.");
+                    return;
+                }
+                else
+                {
+                    UpdateStatus("\n\nContinuing. This will overwrite your existing xml file with a valid one.");
+                }
+            }
             var playlists = FindPlaylists();
             CreatePlaylistFolders(playlists);
-            UpdateStatus("Saving folders xml file.....");
+            UpdateStatus("\n\nSaving folders xml file.....");
             parser.SaveFoldersToXml(_basePath, _folders);
             ForceRename();
-            UpdateStatus("\n\n\nDone!");
+            UpdateStatus("\n\n\nDone!"); 
+        }
+
+        private bool CheckRequiredFoldersAndFiles()
+        {
+            var result = true;
+            if (!Directory.Exists($@"{_basePath}\UserData\SongCore"))
+            {
+                UpdateStatus("\n Oh no! You don't have a required folder. Please ensure you have the SongCore mod installed and have already run beat saber at least once with the SongCore mod. Missing folder UserData\\SongCore.");
+                result = false;
+            } 
+
+            if (!Directory.Exists($@"{_basePath}\Playlists"))
+            {
+                UpdateStatus("\nOh no! You don't have a required folder. Please ensure you have already installed your mods and have already downloaded playlists. Missing folder Playlists.");
+                result = false;
+            } else if (!Directory.EnumerateFiles($@"{_basePath}\Playlists").Any())
+            {
+                UpdateStatus("\nOh no! You don't have any playlists yet. Please ensure you have downloaded at least 1 playlist. Playlists folder has no files.");
+                result = false;
+            }
+
+            if (!Directory.Exists($@"{_basePath}\Beat Saber_Data\CustomLevels"))
+            {
+                UpdateStatus("\nOh no! You don't have a required folder. Please ensure you have the SongCore mod installed and have already run beat saber at least once with the SongCore mod. Missing folder Beat Saber_Data\\CustomLevels.");
+                result = false;
+            }
+
+            if (!File.Exists($@"{_basePath}\UserData\SongCore\folders.xml"))
+            {
+                UpdateStatus("\nOh no! You don't have a required file. Please ensure you have the SongCore mod installed and have already run beat saber at least once with the SongCore mod. Missing file UserData\\SongCore\\folders.xml.");
+                result = false;
+            }
+            
+
+            return result;
         }
 
         private List<Playlist> FindPlaylists()
@@ -64,7 +115,16 @@ namespace BeatSaber_Playlist_Creater
         {
             foreach (var playlist in playlists)
             {
-                UpdateStatus($"\nFound playlist {playlist.playlistTitle} with {playlist.songs.Count} songs. Moving songs to new playlist folder now.....");
+                if(playlist.songs.Any())
+                {
+                    UpdateStatus($"\n\nFound playlist {playlist.playlistTitle} with {playlist.songs.Count} songs. Moving songs to new playlist folder now.....");
+                }
+                else
+                {
+                    UpdateStatus($"\n\nFound playlist {playlist.playlistTitle} But it has no songs. Skipping playlist because it's empty....");
+                    continue;
+                }
+
                 CreatePlaylistFolder(playlist);
             }
         }
@@ -82,7 +142,7 @@ namespace BeatSaber_Playlist_Creater
         {
             if (_forceRename)
             {
-                UpdateStatus($"\nRenaming the Beat Saber_Data\\CustomLevels folder now....");
+                UpdateStatus($"\\nnRenaming the Beat Saber_Data\\CustomLevels folder now....");
                 try
                 {
                     Directory.Move($@"{_basePath}\Beat Saber_Data\CustomLevels", $@"{_basePath}\Beat Saber_Data\CustomLevelsRenamed");
@@ -111,7 +171,7 @@ namespace BeatSaber_Playlist_Creater
 
             foreach( var song in playlist.songs)
             {
-                UpdateStatus($"\nChecking for song {song.songName}......");
+                UpdateStatus($"\n\nChecking for song {song.songName}......");
                 var path = new Parser().GetSongPath(_basePath, song.hash, _songHashDisctionary);
                 if (path == "")
                 {
@@ -173,7 +233,15 @@ namespace BeatSaber_Playlist_Creater
 
         private void UpdateStatus(string message)
         {
-            this.Dispatcher.Invoke(() => StatusText.Text += message) ;
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                Dispatcher.Invoke(() => StatusText.Text = string.Empty);
+            }
+            else
+            {
+                Dispatcher.Invoke(() => StatusText.Text += message);
+            }
+           
         }
     }
 }

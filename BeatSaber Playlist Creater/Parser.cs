@@ -67,11 +67,22 @@ namespace BeatSaber_Playlist_Creater
             var filePath = $@"{path}\UserData\SongCore\folders.xml";
 
             XmlSerializer ser = new XmlSerializer(typeof(folders));
-            
-            using (XmlReader reader = XmlReader.Create(filePath))
+
+            try
             {
-                result = (folders)ser.Deserialize(reader);
+                using (XmlReader reader = XmlReader.Create(filePath))
+                {
+                    result = (folders)ser.Deserialize(reader);
+                }
             }
+            catch(Exception e)
+            {
+                result = new folders
+                {
+                    folder = new List<foldersFolder>()
+                };
+            }
+            
             return result;
         }
 
