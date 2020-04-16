@@ -1,5 +1,5 @@
 # BeatSaberPlaylistMover
-Fixes playlist issue in BeatSaber 1.6 by moving playlists to their own folders for you.
+Fixes playlist issue in BeatSaber by moving playlists to their own folders for you.
 
 To use, simply download the latest zip folder and extract it. Then run the exe file.
 
@@ -57,8 +57,9 @@ In order to know for certain what songs go with what playlists we need to match 
 So how do we do it? Easy. Every song folder is named a very specfic way. The songs id is the very first set of charectors followed by a space. That id is NOT what's in the playlist though. It's the id on beatsaver.com. With this id we can make an api call to beatsaver and grab the hash id for the song. THIS is what sets every song apart and THIS is how we link the songs to the playlists. 
 
 So for every song folder in the custom levels folder we:
-1. Get the id by parsing the id from the folder name
-2. Use this id to call the beastsaver.com api and get the songs hash id
+1. Get the id by parsing the id from the folder name. Folders MUST be named as ID then a space. If you have the hash as the folder name it won't work..... for now. 
+2a. Check if the song folder contains a metadata file. If it does use it to get the hash.
+2b. If no metatdate file then use the id  from step 1 to call the beastsaver.com api and get the songs hash id
 3. Save the songs folder name and hash id to a dictionary object for later use
 
 # Show me the playlists! #
@@ -69,7 +70,7 @@ But! The hash id IS the same id beatsaver.com gives us back. Because of this the
 
 We also use the base 64 string here as the cover art for the playlist. We can do this by converting the string into an image file and saving it. The playlist name is used as the playlist folder name and the playlist name in beat saber.
 
-To get the playlists we always look in the Playlists folder. We simply grab all files (not folders) in the folder and loop thorugh them 1 by 1.
+To get the playlists we always look in the Playlists folder. We simply grab all files (not folders) in the folder and loop thorugh them 1 by 1. Can you have have playlists in other folders? Sure .....but then you already have a custom setup as the default is to use the Playlists folder, and I would need a lot more info to program for that scenerio. So just use the default unless you feel like telling me your setup.
 
 
 # Playlists are stored where? #
