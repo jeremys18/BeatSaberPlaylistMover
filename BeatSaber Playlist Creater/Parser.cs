@@ -118,9 +118,20 @@ namespace BeatSaber_Playlist_Mover
                 {
                     var client = new HttpClient();
                     var id = folder.Name.Split(' ')[0].Trim();
+                    var metadataPath = File.ReadAllText(folder.FullName + @"\meatdata.dat");
+                    var json = string.Empty;
 
-                    var response = await client.GetAsync("https://beatsaver.com/api/stats/key/" + id);
-                    var json = await response.Content.ReadAsStringAsync();
+                    if (File.Exists(metadataPath))
+                    {
+                        json = File.ReadAllText(Path.Combine(folder.FullName, "metadata.dat")); // file contains hash already
+                    }
+                    else
+                    {
+                        // We dont have the hash handy so we need to get it.
+                        var response = await client.GetAsync("https://beatsaver.com/api/stats/key/" + id);
+                        json = await response.Content.ReadAsStringAsync();
+                    }
+
                     var info = JsonConvert.DeserializeObject<SongInformation>(json);
 
                     result.Add(folder.Name, info.hash);
